@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Muffin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Pixelated Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div style="text-align: center;">
+            <div class="pixelated-loading">
+                LOADING<span class="loading-dots">...</span>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    
+    <!-- Background GIF -->
+    <div class="background-animation" id="backgroundAnimation">
+        <img src="./images/background.gif" alt="Background animation" class="background-gif" id="backgroundGif">
+    </div>
+
+    <!-- Lightbox Modal for Image Zoom -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <img src="" alt="Zoomed image" id="lightboxImage">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Tab Navigation -->
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="info">Info</button>
+            <button class="tab-btn" data-tab="contact">Contact</button>
+            <button class="tab-btn" data-tab="playground">Playground</button>
+        </nav>
+
+        <!-- Main Grid -->
+        <div class="grid-layout">
+            <!-- Left Column: Info Card -->
+            <aside class="info-card" id="infoCard">
+                <div class="avatar">
+                    <img src="./images/avatar.jpg" alt="Profile avatar" loading="eager">
+                </div>
+                <h1 class="tagline">Muffin</h1>
+                <p class="bio">
+                    Hi, I'm the person behind muffin me. I love creating things that feel calm, honest, and a little bit personal. My work is about finding beauty in small details — in colours, textures, and quiet moments that often go unnoticed.
+                </p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Behance">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 8h5.5c1.5 0 3 1 3 2.5s-1.5 2.5-3 2.5H3V8z"></path>
+                            <path d="M3 13h6c1.7 0 3 1.3 3 3s-1.3 3-3 3H3v-6z"></path>
+                            <path d="M15 9h6"></path>
+                            <circle cx="18" cy="15" r="3"></circle>
+                        </svg>
+                    </a>
+                </div>
+            </aside>
+
+            <!-- Collapsed Info Chip -->
+            <div class="info-chip" id="infoChip" style="display: none;">
+                <div class="chip-avatar">
+                    <img src="./images/avatar.jpg" alt="Avatar">
+                </div>
+                <span class="chip-text">Muffin</span>
+            </div>
+
+            <!-- Center Column: Content Tabs -->
+            <main class="content-area">
+                <!-- Info Tab Content -->
+                <div class="tab-content active" id="info-content">
+                    <div class="info-extended">
+                        <h2>About</h2>
+                        <p>Muffin Me is a creative practice centered on visual storytelling through thoughtful design and composition. With a focus on editorial aesthetics and minimalist sensibilities, each project explores the intersection of color, texture, and emotional resonance.</p>
+                        <p>My work spans digital design, branding, and visual content creation — all driven by the belief that design should feel intentional, authentic, and quietly impactful. Every piece is crafted to communicate beyond words, creating moments of connection through visual language.</p>
+                        <p>Based on a philosophy of slow creativity and mindful craft, I approach each project as an opportunity to distill ideas into their most honest and refined form.</p>
+                        
+                        <!-- Highlights Collage -->
+                        <div class="highlights-collage">
+                            <h3>Featured Work</h3>
+                            <div class="collage-grid">
+                                <div class="collage-item">
+                                    <img src="./images/tshirt1.png" alt="Highlight 1" loading="lazy">
+                                </div>
+                                <div class="collage-item">
+                                    <img src="./images/tshirt2.jpg" alt="Highlight 2" loading="lazy">
+                                </div>
+                                <div class="collage-item">
+                                    <img src="./images/tshirt3.jpg" alt="Highlight 3" loading="lazy">
+                                </div>
+                                <div class="collage-item">
+                                    <img src="./images/tshirt4.jpg" alt="Highlight 4" loading="lazy">
+                                </div>
+                                <div class="collage-item">
+                                    <img src="./images/tshirt5.jpg" alt="Highlight 5" loading="lazy">
+                                </div>
+                                <div class="collage-item">
+                                    <img src="./images/tshirt1.png" alt="Highlight 6" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Tab Content -->
+                <div class="tab-content" id="contact-content">
+                    <div class="contact-box">
+                        <h2>Let's Collaborate</h2>
+                        <p>Have a project in mind or want to work together? I'd love to hear from you.</p>
+                        <a href="mailto:maxilo1984@gmail.com" class="contact-btn">Get in Touch</a>
+                    </div>
+                </div>
+
+                <!-- Playground Tab Content -->
+                <div class="tab-content" id="playground-content">
+                    <div class="gallery">
+                        <!-- Latest Drop Hero -->
+                        <div class="gallery-item hero">
+                            <img src="./images/tshirt1.png" alt="Latest t-shirt design" loading="lazy">
+                            <div class="caption">
+                                <h3>Latest Drop</h3>
+                                <p class="item-title">Latest T-Shirt Design</p>
+                            </div>
+                        </div>
+
+                        <!-- Gallery Grid -->
+                        <div class="gallery-item square">
+                            <img src="./images/tshirt2.jpg" alt="T-shirt design 1" loading="lazy">
+                            <div class="caption">
+                                <p class="item-title">T-Shirt Design #2</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item wide">
+                            <img src="./images/tshirt3.jpg" alt="T-shirt design 2" loading="lazy">
+                            <div class="caption">
+                                <p class="item-title">T-Shirt Design #3</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item square">
+                            <img src="./images/tshirt4.jpg" alt="T-shirt design 3" loading="lazy">
+                            <div class="caption">
+                                <p class="item-title">T-Shirt Design #4</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item square">
+                            <img src="./images/tshirt5.jpg" alt="T-shirt design 4" loading="lazy">
+                            <div class="caption">
+                                <p class="item-title">T-Shirt Design #5</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item wide">
+                            <img src="./images/tshirt1.png" alt="T-shirt design 5" loading="lazy">
+                            <div class="caption">
+                                <p class="item-title">Featured Design</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item square">
+                            <img src="./images/tshirt2.jpg" alt="T-shirt design 6" loading="lazy">
+                            <div class="caption">
+                                <p class="item-title">Classic Collection</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
